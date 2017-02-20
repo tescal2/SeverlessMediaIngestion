@@ -1,0 +1,16 @@
+{
+  "name": "s3-objectdeleted-lambda",
+  "version": "1.0.0",
+  "description": "Lambda function executed on S3 object deletion",
+  "main": "index.js",
+  "dependencies": {
+    "async": "^1.5.2"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.3.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+    "license": "Apache-2.0"
+}

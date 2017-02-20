@@ -1,0 +1,30 @@
+{
+  "cognito": {
+    "identityPool": {
+      "id": "us-east-1:64f38832-8b42-5270-b776-4c3d68cf9a5d", //You must pre-configure this Cognito Identity pool and update this field
+      "identityProviders": {
+        "amazon": {
+          "client": {
+            "id": "amzn1.application-oa2-client.c31f25ef6a364472a011d24c3646d3da"
+          }
+        }
+      }
+    }
+  },
+  "s3": {
+    "bucket": {
+      "name": "customerpoc1-469578381154", //update this field with your folder name that will hold the media content
+      "inputs": {
+        "prefix": "inputs/"
+      },
+      "outputs": {
+        "prefix": "outputs/"
+      }
+    }
+  },
+  "dynamoDB": {
+    "table": {
+      "name": "customerpoc1" //this wil be the name of your DynamoDB Table that gets created
+    }
+  }
+}

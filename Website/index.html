@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Serverless Media Demo</title>
+    <script src="html/jquery/jquery-2.2.3.min.js"></script>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="html/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="html/bootstrap-social/bootstrap-social.css">
+    <link rel="stylesheet" href="html/amazon-button.css">
+
+    <script src="//sdk.amazonaws.com/js/aws-sdk-2.3.5.min.js"></script>
+    <script src="https://api-cdn.amazon.com/sdk/login1.js"></script>
+
+    <link href="//vjs.zencdn.net/5.9.2/video-js.min.css" rel="stylesheet">
+    <script src="//vjs.zencdn.net/5.9.2/video.min.js"></script>
+    <script src="html/videojs/videojs-contrib-hls.min.js"></script>
+
+    <script src="html/index.js"></script>
+    <link rel="stylesheet" href="html/index.css">
+    <base target="moreinfo">
+</head><body>
+    <h1>Serverless Media PoC</h1>
+    <div>
+        <a href="#about" class="btn btn-primary" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">About</a>
+        <a id="loginButton" href="#" class="hidden btn btn-social btn-amazon"><span class="fa fa-amazon"></span><span>&nbsp;</span></a>
+    </div>
+    <main>
+        <section id="about" class="collapse">
+            <h1>About</h1>
+            <p><em>This application has only been tested on Firefox ESR 45.7.0.</em></p>
+            <ol>
+                <li>If not already authenticated, click 'Login with Amazon'.
+                    This will direct you to login using your 
+                    <a href="http://login.amazon.com/">Amazon identity</a> and obtain 
+                    <a href="https://aws.amazon.com/cognito/">Amazon Cognito</a> credentials 
+                    in order to upload media to an <a href="https://aws.amazon.com/s3/">Amazon S3</a> bucket.
+                <li>You will be asked to allow access to your camera and microphone so that an 
+                    <a href="https://developer.mozilla.org/en/docs/Web/API/MediaStream">HTML5 MediaStream</a> object can be constructed and played in the 'Live' player. 
+                <li>In the 'Live' section, enter a name for the media file you will record and click the record button. This will use the  
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder">HTML5 MediaRecorder</a> 
+                    object to record media in MPEG4 format.
+                <li>Once you have recorded your video, click the stop button. The recorded media will be uploaded to S3 using the 
+                    <a href="http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3/ManagedUpload.html">AWS JavaScript SDK ManagedUpload</a> object. 
+                    A progress bar will be displayed during the upload.
+                <li>Once the media is uploaded, S3 may call an <a href="https://aws.amazon.com/lambda/">AWS Lambda</a> function which will
+                    a customer can use to extract metadata  with tools aligning to their business processes.  <a href="https://mediaarea.net/en/MediaInfo" target"moreinfo">MediaInfo</a>, is a popular web example which can store data in
+                    a <a href="https://aws.amazon.com/dynamodb/">Amazon DynamoDB</a> table 
+                    and start an <a href="https://aws.amazon.com/elastictranscoder/">Amazon Elastic Transcoder</a> job to transcode 
+                    the media file into multiple variants of HLS.
+                <li>Once the <a href="https://aws.amazon.com/elastictranscoder/">Amazon Elastic Transcoder</a> job is complete, 
+                    Elastic Transcoder will publish a message to an <a href="https://aws.amazon.com/sns/">Amazon SNS</a> topic which will execute an 
+                    <a href="https://aws.amazon.com/lambda/">AWS Lambda</a> function. This Lambda function will update the
+                    <a href="https://aws.amazon.com/dynamodb/">Amazon DynamoDB</a> table with the time the transcode was completed.
+                <li>Click 'Refresh' to exemplify a Serverless Update to DynamoDB by populating a list of media previously uploaded.
+
+            </ol>
+        </section>
+        <div id="mediaContainer" class="flexcontainer hidden">
+            <section id="liveSection">
+                <h1>Live</h1>
+                <video id="livePlayer" width="320" height="180"></video>
+                <form id="recordForm" class="flexbar">
+                    <input id="recordKey" placeholder="Name" required pattern="\w+" class="flexgrow">
+                    <button id="recordButton" disabled class="fa fa-play-circle"></button>
+                </form>
+                <div class="progress progress-striped active hidden">
+                    <div id="progressBar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </section>
+            <section id="transcodedSection">
+                <h1>Serverless DynamoDB Updates</h1>
+
+                    <button id="refreshButton" class="fa fa-refresh"></button>
+                    <ul id="mediaList" class="flexgrow">
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+<body></html>
