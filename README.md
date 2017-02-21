@@ -38,7 +38,7 @@
 ![Alt text] (https://github.com/tescal2/SeverlessMediaIngestion/blob/master/Website/html/images/FullApplicationArchitecture_Vote2OverturnInstantReplay.png?raw=true)
             
  <h1>Potential MVP Iterations</h1>
-            <p><em>This is a potential MVP Iteration in which we add in <a href="https://aws.amazon.com/rekognition/">Amazon Rekognition</a> that can be used to enrich the ElasticSearch Cluster by adding labels and level of confidence: </em></p>
+            <p><em>This is a potential MVP Iteration in which we add in a Deep learning-based image recognition service called<a href="https://aws.amazon.com/rekognition/">Amazon Rekognition</a> that can be used to enrich the ElasticSearch Cluster by adding labels and level of confidence: </em></p>
  
 ![Alt text] (https://github.com/tescal2/SeverlessMediaIngestion/blob/master/Website/html/images/MVP_IterationWithRekognition.png?raw=true?raw=true)
             
