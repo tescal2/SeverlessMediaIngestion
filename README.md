@@ -1,7 +1,7 @@
 # SeverlessMediaIngestion
 <p><em>Serverless Media Video Ingestion Process on AWS Platform for Customer PoC's</em></p>
 
-![alt tag] (https://github.com/tescal2/SeverlessMediaIngestion/blob/master/Website/html/images/IngestionProcess.png?raw=true)
+![Alt text] (https://github.com/tescal2/SeverlessMediaIngestion/blob/master/Website/html/images/IngestionProcess.png?raw=true)
 
 <main>
         <section id="about" class="collapse">
@@ -35,10 +35,10 @@
  <h1>Full Application Architecture</h1>
             <p><em>This Architecture depicts the full application inclusive of the Fan Experience:</em></p>
             
-![alt tag] (https://github.com/tescal2/SeverlessMediaIngestion/blob/master/Website/html/images/FullApplicationArchitecture_Vote2OverturnInstantReplay.png?raw=true)
+![Alt text] (https://github.com/tescal2/SeverlessMediaIngestion/blob/master/Website/html/images/FullApplicationArchitecture_Vote2OverturnInstantReplay.png?raw=true)
             
  <h1>Potential MVP Iterations</h1>
             <p><em>This is a potential MVP Iteration in which we add in a Deep learning-based image recognition service called<a href="https://aws.amazon.com/rekognition/">Amazon Rekognition</a> that can be used to enrich the ElasticSearch Cluster by adding labels and level of confidence: </em></p>
  
-![alt tag] (https://github.com/tescal2/SeverlessMediaIngestion/blob/master/Website/html/images/MVP_IterationWithRekognition.png?raw=true?raw=true)
+![Alt text] (https://github.com/tescal2/SeverlessMediaIngestion/blob/master/Website/html/images/MVP_IterationWithRekognition.png?raw=true?raw=true)
             
