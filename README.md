@@ -38,7 +38,7 @@
 <img src="Website/html/images/IngestionProcess.png" alt="Ingestion Process" title="Ingestion Process" align="center" />
             
  <h1>Potential MVP Iterations</h1>
-            <p><em>This is a potential MVP Iteration in which we add in a Deep learning-based image recognition service called<a href="https://aws.amazon.com/rekognition/">Amazon Rekognition</a> that can be used to enrich the ElasticSearch Cluster by adding labels and level of confidence: </em></p>
+            <p><em>This is a potential MVP Iteration in which we add in a Deep learning-based image recognition service called <a href="https://aws.amazon.com/rekognition/">Amazon Rekognition</a> that can be used to enrich the ElasticSearch Cluster by adding labels and level of confidence: </em></p>
  
 <img src="Website/html/images/MVP_IterationWithRekognition.png" alt="Rekognition Iteration" title="Rekognition Iteration" align="center" />
             
