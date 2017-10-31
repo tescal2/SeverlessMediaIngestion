@@ -1,6 +1,7 @@
 # SeverlessMediaIngestion
 <p><em>Serverless Media Video Ingestion Process on AWS Platform for Customer PoC's</em></p>
 
+<img src="Website/html/images/FullApplicationArchitecture_Vote2OverturnInstantReplay.png" alt="Vote to Overturn" title="Serverless Media Ingestion" align="center" />
 ![Alt text] (/SeverlessMediaIngestion/master/Website/html/images/IngestionProcess.png)
 
 <main>
