@@ -1,7 +1,7 @@
 # SeverlessMediaIngestion
 <p><em>Serverless Media Video Ingestion Process on AWS Platform for Customer PoC's</em></p>
 
-![Alt text] (https://github.com/tescal2/SeverlessMediaIngestion/raw/master/Website/html/images/IngestionProcess.png)
+![Alt text] (SeverlessMediaIngestion/master/Website/html/images/IngestionProcess.png)
 
 <main>
         <section id="about" class="collapse">
