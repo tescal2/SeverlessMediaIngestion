@@ -1,4 +1,4 @@
-# SeverlessMediaIngestion
+# Severless Media Ingestion
 <p><em>Serverless Media Video Ingestion Process on AWS Platform (PoC) </em></p>
 
 <img src="Website/html/images/FullApplicationArchitecture_Vote2OverturnInstantReplay.png" alt="Vote to Overturn" title="Serverless Media Ingestion" align="center" />
